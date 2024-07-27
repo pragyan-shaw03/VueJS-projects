@@ -24,33 +24,36 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            <a class="nav-link active" aria-current="page" href="#" @click.prevent="reloadPage">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link active" href="#">About</a>
                         </li>
                     </ul>
                     <form class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-light" id="search" type="submit">Search</button>
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                            v-model="searchOption">
+                        <button class="btn btn-outline-light" id="search" type="submit"
+                            @click.prevent="searched">Search</button>
                     </form>
                 </div>
             </div>
         </nav>
-        
+
         <div class="empty"></div>
-        
+
         <div class="heading">
             <div class="main-heading">
                 BLOGS
             </div>
             <p>Learn about designs through our <br> blogs insights, thoughts, industry trends and <br> market tips.</p>
         </div>
-        
+
         <div class="cards">
-            <blog-card v-for="(title, i) in titles" :key="i" :title="titles[i]" :image="images[i]"></blog-card>
+            <blog-card v-for="item in filteredItems" :key="item" :title="item.title" :image="item.image">
+            </blog-card>
         </div>
-    
+
         <footer>
             <div class="logo">
                 <img src="images/logo_text.png" alt="" id="footer-logo">
@@ -58,13 +61,11 @@
             <div class="footer-items">
                 <div class="about">
                     <h3 style="color: white;">About</h3>
-                    <p>DIY Baazar aims to provide a bigger platform for all artisans and encourages Art Culture. Customers get a variety of impressive products at cost effective price in a single click. Any customised item or gifts can carry out special message to your loved ones. DIY Baazar aims to connect both handmade artisans and handicraft lovers.</p>
-                    <i id="phone" class="fa-solid fa-phone" style="color: white; opacity: 0.5;"></i>
-                    <a href="#" style="padding-left: 10px;">+91 7044617095</a>
-                    <br>
-                    <i class="fa-solid fa-envelope" style="color: white; opacity: 0.5;"></i>
-                    <a href="#" style="padding-left: 10px;">contact@diybazaar.com</a>
-                </div>
+                    <p>DIY Baazar aims to provide a bigger platform for all artisans and encourages Art Culture.
+                        Customers get a variety of impressive products at cost effective price in a single click. Any
+                        customised item or gifts can carry out special message to your loved ones. DIY Baazar aims to
+                        connect both handmade artisans and handicraft lovers.</p>
+                    </div>
                 <div class="links">
                     <h3 style="color: white;">Links</h3>
                     <ul>
@@ -75,6 +76,13 @@
                     </ul>
                 </div>
             </div>
+            <div class="contact-details">
+                <i id="phone" class="fa-solid fa-phone"></i>
+                <a href="#" style="padding-left: 10px;">+91 7044617095</a>
+                <br>
+                <i class="fa-solid fa-envelope" ></i>
+                <a href="#" style="padding-left: 10px;">contact@diybazaar.com</a>
+            </div>
 
             <hr style="color: white; font-weight: 100;">
             <div class="social-media" style="display: flex; flex-wrap: wrap; justify-content: center;">
@@ -84,7 +92,8 @@
                 <a href="#"><i class="fa-brands fa-facebook"></i><span>Facebook</span></a>
             </div>
             <p style="text-align: center; color: white;margin: 30px; font-weight: 200;">
-                Copyright <i class="fa-sharp fa-regular fa-copyright" style="color: white; opacity: 0.8;"></i>2024 All rights reserved | Powered by DIY Baazar
+                Copyright <i class="fa-sharp fa-regular fa-copyright" style="color: white; opacity: 0.8;"></i>2024 All
+                rights reserved | Powered by DIY Baazar
             </p>
         </footer>
     </div>
@@ -94,11 +103,30 @@
         let app = Vue.createApp({
             data() {
                 return {
-                    titles: ['name1', 'name2', 'name3', 'name4', 'name5'],
-                    images: ['images/img1.jpg', 'images/img2.jpg', 'images/img1.jpg', 'images/img2.jpg', 'images/img1.jpg'],
+                    items: [
+                        { title: 'name1', disp: true, image: 'images/img1.jpg' },
+                        { title: 'name11', disp: true, image: 'images/img2.jpg' },
+                        { title: 'name111', disp: true, image: 'images/img1.jpg' },
+                        { title: 'name1111', disp: true, image: 'images/img1.jpg' },
+                        { title: 'name11111', disp: true, image: 'images/img2.jpg' },
+                    ],
+                    searchOption: '',
+                }
+            },
+            computed: {
+                filteredItems() {
+                    return this.items.filter(item => item.disp);
                 }
             },
             methods: {
+                searched() {
+                    this.items.forEach(item => {
+                        item.disp = item.title.toLowerCase().startsWith(this.searchOption.toLowerCase());
+                    });
+                },
+                reloadPage() {
+                    window.location.reload();
+                }
             }
         })
         app.component('blog-card', {
