@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="css/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <title>Document</title>
 </head>
@@ -36,16 +37,56 @@
                 </div>
             </div>
         </nav>
+        
         <div class="empty"></div>
+        
         <div class="heading">
             <div class="main-heading">
                 BLOGS
             </div>
             <p>Learn about designs through our <br> blogs insights, thoughts, industry trends and <br> market tips.</p>
         </div>
+        
         <div class="cards">
             <blog-card v-for="(title, i) in titles" :key="i" :title="titles[i]" :image="images[i]"></blog-card>
         </div>
+    
+        <footer>
+            <div class="logo">
+                <img src="images/logo_text.png" alt="" id="footer-logo">
+            </div>
+            <div class="footer-items">
+                <div class="about">
+                    <h3 style="color: white;">About</h3>
+                    <p>DIY Baazar aims to provide a bigger platform for all artisans and encourages Art Culture. Customers get a variety of impressive products at cost effective price in a single click. Any customised item or gifts can carry out special message to your loved ones. DIY Baazar aims to connect both handmade artisans and handicraft lovers.</p>
+                    <i id="phone" class="fa-solid fa-phone" style="color: white; opacity: 0.5;"></i>
+                    <a href="#" style="padding-left: 10px;">+91 7044617095</a>
+                    <br>
+                    <i class="fa-solid fa-envelope" style="color: white; opacity: 0.5;"></i>
+                    <a href="#" style="padding-left: 10px;">contact@diybazaar.com</a>
+                </div>
+                <div class="links">
+                    <h3 style="color: white;">Links</h3>
+                    <ul>
+                        <li>About us</li>
+                        <li>Contact</li>
+                        <li>Blogs</li>
+                        <li>FAQs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr style="color: white; font-weight: 100;">
+            <div class="social-media">
+                <a href="#"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i><span>Youtube</span></a>
+                <a href="#"><i class="fa-brands fa-pinterest"></i><span>Pinterest</span></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i><span>Facebook</span></a>
+            </div>
+            <p style="text-align: center; color: white;margin: 30px; font-weight: 200;">
+                Copyright <i class="fa-sharp fa-regular fa-copyright" style="color: white; opacity: 0.8;"></i>2024 All rights reserved | Powered by DIY Baazar
+            </p>
+        </footer>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
