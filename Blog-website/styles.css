@@ -5,7 +5,7 @@
 body {
     background: url(images/bgimg.jpg);
     background-repeat: no-repeat;
-    background-size: 100% 545px;
+    background-size: 1800px 545px;
 }
 #nav-logo {
     font-weight: 900;
@@ -18,7 +18,7 @@ body {
     margin-right: 50px;
 }
 .heading {
-    margin-left: 100px;
+    margin: 0 80px;
     color: white;
 }
 .main-heading {
@@ -87,6 +87,11 @@ footer {
     color: white;
     opacity: 0.5;
     font-size: 25px;
+}
+.contact-details > i, .contact-details > a {
+    padding-left: 30px;
+    color: white;
+    opacity: 0.5;
 }
 a {
     text-decoration: none;
