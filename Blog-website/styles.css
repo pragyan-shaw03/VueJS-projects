@@ -3,7 +3,9 @@
     margin:0;
 }
 body {
-    position: relative;
+    background: url(images/bgimg.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 545px;
 }
 #nav-logo {
     font-weight: 900;
@@ -14,11 +16,6 @@ body {
 }
 #nav-links > .nav-item {
     margin-right: 50px;
-}
-.body-content {
-    height: 70vh;
-    width: 100%;
-    background-color:#212529;
 }
 .heading {
     margin-left: 100px;
@@ -38,7 +35,6 @@ body {
     box-shadow: 2px 2px 20px black;
 }
 .cards {
-    position: absolute;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
