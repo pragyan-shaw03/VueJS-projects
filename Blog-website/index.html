@@ -12,39 +12,36 @@
 
 <body>
     <div id="app">
-
-        <div class="body-content">
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-                <div class="container-fluid">
-                    <a class="navbar-brand" id="nav-logo" href="#">DIY Bazaar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" href="#">About</a>
-                            </li>
-                        </ul>
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-light" id="search" type="submit">Search</button>
-                        </form>
-                    </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" id="nav-logo" href="#">DIY Bazaar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="nav-links">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">About</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-light" id="search" type="submit">Search</button>
+                    </form>
                 </div>
-            </nav>
-            <div class="empty"></div>
-            <div class="heading">
-                <div class="main-heading">
-                    BLOGS
-                </div>
-                <p>Learn about designs through our<br> blogs insights, thoughts, industry trends and<br> market tips.</p>
             </div>
+        </nav>
+        <div class="empty"></div>
+        <div class="heading">
+            <div class="main-heading">
+                BLOGS
+            </div>
+            <p>Learn about designs through our <br> blogs insights, thoughts, industry trends and <br> market tips.</p>
         </div>
         <div class="cards">
             <blog-card v-for="(title, i) in titles" :key="i" :title="titles[i]" :image="images[i]"></blog-card>
@@ -57,7 +54,7 @@
             data() {
                 return {
                     titles: ['name1', 'name2', 'name3', 'name4', 'name5'],
-                    images: ['images/img1.jpg', '/images/img2.jpg', '/images/img1.jpg', '/images/img2.jpg', '/images/img1.jpg'],
+                    images: ['images/img1.jpg', 'images/img2.jpg', 'images/img1.jpg', 'images/img2.jpg', 'images/img1.jpg'],
                 }
             },
             methods: {
