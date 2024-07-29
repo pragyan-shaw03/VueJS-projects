@@ -95,11 +95,11 @@ export default {
   data() {
     return {
       items: [
-        { title: 'name1', disp: true, image: '../assets/img1.jpg' },
-        { title: 'name11', disp: true, image: '../assets/img2.jpg' },
-        { title: 'name111', disp: true, image: '../assets/img1.jpg' },
-        { title: 'name1111', disp: true, image: '../assets/img1.jpg' },
-        { title: 'name11111', disp: true, image: '../assets/img2.jpg' }
+        { title: 'name1', disp: true, image: require('@/assets/img1.jpg') },
+        { title: 'name11', disp: true, image: require('@/assets/img2.jpg') },
+        { title: 'name111', disp: true, image: require('@/assets/img1.jpg') },
+        { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') },
+        { title: 'name11111', disp: true, image: require('@/assets/img2.jpg') }
       ],
       searchOption: ''
     };
