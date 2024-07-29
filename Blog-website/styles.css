@@ -31,18 +31,18 @@ body {
     font-weight: 100;
 }
 .card {
-    margin:20px;
-    box-shadow: 2px 2px 20px black;
+    justify-self: center;
+    border: 1px solid gray;
 }
 .cards {
-    display: flex;
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
     justify-content: center;
-    flex-wrap: wrap;
-    top: 280px;
-    margin:40px;
+    align-items: center;
+    margin: 50px 20px;
 }
 img {
-    border-radius: 10px;
     border-radius: border-box;
 }
 .empty {

@@ -48,10 +48,11 @@
             </div>
             <p>Learn about designs through our <br> blogs insights, thoughts, industry trends and <br> market tips.</p>
         </div>
-
-        <div class="cards">
-            <blog-card v-for="item in filteredItems" :key="item" :title="item.title" :image="item.image">
-            </blog-card>
+        <div class="cards-wrapper">
+            <div class="cards">
+                <blog-card v-for="item in filteredItems" :key="item" :title="item.title" :image="item.image">
+                </blog-card>
+            </div>
         </div>
 
         <footer>
@@ -65,7 +66,7 @@
                         Customers get a variety of impressive products at cost effective price in a single click. Any
                         customised item or gifts can carry out special message to your loved ones. DIY Baazar aims to
                         connect both handmade artisans and handicraft lovers.</p>
-                    </div>
+                </div>
                 <div class="links">
                     <h3 style="color: white;">Links</h3>
                     <ul>
@@ -80,7 +81,7 @@
                 <i id="phone" class="fa-solid fa-phone"></i>
                 <a href="#" style="padding-left: 10px;">+91 7044617095</a>
                 <br>
-                <i class="fa-solid fa-envelope" ></i>
+                <i class="fa-solid fa-envelope"></i>
                 <a href="#" style="padding-left: 10px;">contact@diybazaar.com</a>
             </div>
 
