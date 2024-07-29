@@ -64,9 +64,10 @@ footer {
 }
 .footer-items {
     display: flex;
+    flex-wrap: wrap;
 }
 .about {
-    width: 70%;
+    width: 900px;
     padding: 30px;
 }
 .links {
