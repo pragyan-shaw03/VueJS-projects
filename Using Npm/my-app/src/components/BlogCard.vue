@@ -1,11 +1,11 @@
 <template>
-  <div class="card" style="width: 18rem;">
+  <div class="card">
     <img :src="image" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{title}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+      <p class="card-text">Some quick example text to build on the card title and 
         card's content.</p>
-        <a href="#" class="btn btn-dark"> Read  More...</a>
+        <a href="#" class="btn btn-outline-dark"> Read  More... <i>>></i></a>
       </div>
     </div>
 </template>
@@ -19,9 +19,16 @@
   };
 </script>
 
-<style>
+<style scoped>
 .card {
     justify-self: center;
     border: 1px solid gray;
+}
+i {
+  color:white;
+  display: none;
+}
+a:hover > i {
+  display: inline;
 }
 </style>

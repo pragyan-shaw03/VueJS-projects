@@ -95,7 +95,7 @@ export default {
   data() {
     return {
       items: [
-        { title: 'name1', disp: true, image: require('@/assets/img1.jpg') },
+        { title: 'name1', disp: true, image: require('@/assets/img1.jpg')},
         { title: 'name11', disp: true, image: require('@/assets/img2.jpg') },
         { title: 'name111', disp: true, image: require('@/assets/img1.jpg') },
         { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') },
@@ -158,7 +158,8 @@ body {
 .cards {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
+  padding: 20px;
   justify-content: center;
   align-items: center;
   margin: 50px 20px;
