@@ -159,10 +159,9 @@ body {
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
-  padding: 20px;
   justify-content: center;
   align-items: center;
-  margin: 50px 20px;
+  margin: 50px 10px;
 }
 img {
   border-radius: border-box;
