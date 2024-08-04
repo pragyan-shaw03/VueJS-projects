@@ -34,6 +34,7 @@
             </div>
             <p>Learn about designs through our <br> blogs insights, thoughts, industry trends and <br> market tips.</p>
         </div>
+        
         <div class="cards-wrapper">
             <div class="cards">
                 <BlogCard v-for="item in filteredItems" :key="item.title" :title="item.title" :image="item.image">
@@ -41,9 +42,9 @@
             </div>
         </div>
 
-        <footer>
+        <footer class="">
             <div class="logo">
-                <img src="./assets/logo_text.png" alt="" id="footer-logo">
+                <!-- <img src="./assets/logo_text.png" alt="" id="footer-logo"> -->
             </div>
             <div class="footer-items">
                 <div class="about">
@@ -158,13 +159,10 @@ body {
 .cards {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 250px));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   justify-content: center;
   align-items: center;
   margin: 50px 10px;
-}
-img {
-  border-radius: border-box;
 }
 .empty {
   height: 100px;
@@ -176,12 +174,10 @@ footer {
 .logo {
   background-color: white;
   height: 100px;
-  width: 300px;
-  margin: 0 auto;
-}
-#footer-logo {
-  height: 100px;
-  width: 300px;
+  width: 420px;
+  background-image: url(assets/logo_text.png);
+  background-size: cover;
+  margin: auto;
 }
 .footer-items {
   display: flex;
@@ -218,5 +214,14 @@ footer {
 a {
   text-decoration: none;
   color: white;
+}
+@media (max-width: 600px) {
+  .logo {
+    height: 80px;
+    width: 250px;
+  }
+  .heading {
+    margin: 0 30px;
+  }
 }
 </style>
