@@ -37,7 +37,7 @@
         
         <div class="cards-wrapper">
             <div class="cards">
-                <BlogCard v-for="item in filteredItems" :key="item.title" :title="item.title" :image="item.image">
+                <BlogCard v-for="item in filteredItems" :key="item.title" :title="item.title" :image="item.image" :username="item.username">
                 </BlogCard>
             </div>
         </div>
@@ -96,11 +96,11 @@ export default {
   data() {
     return {
       items: [
-        { title: 'name1', disp: true, image: require('@/assets/img1.jpg')},
-        { title: 'name11', disp: true, image: require('@/assets/img2.jpg') },
-        { title: 'name111', disp: true, image: require('@/assets/img1.jpg') },
-        { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') },
-        { title: 'name11111', disp: true, image: require('@/assets/img2.jpg') }
+        { title: 'name1', disp: true, image: require('@/assets/img1.jpg'), username: 'pragyan@03'},
+        { title: 'name11', disp: true, image: require('@/assets/img2.jpg'), username: 'amanjaiz'},
+        { title: 'name111', disp: true, image: require('@/assets/img1.jpg') , username: 'akshat02'},
+        { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') , username: 'aasthadas1'},
+        { title: 'name11111', disp: true, image: require('@/assets/img2.jpg') , username: 'nishu@3'}
       ],
       searchOption: ''
     };
@@ -159,7 +159,7 @@ body {
 .cards {
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 350px));
   justify-content: center;
   align-items: center;
   margin: 50px 10px;

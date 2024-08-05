@@ -1,10 +1,14 @@
 <template>
-  <div class="card" style="">
+  <div class="card" style="border-radius: 0px;">
     <img :src="image" class="card-img-top" alt="...">
     <div class="card-body">
       <h5 class="card-title">{{title}}</h5>
       <p class="card-text">Some quick example text to build on the card title and 
         card's content.</p>
+        <div class="d-flex justify-content-between">
+          <span><i class="fa-solid fa-user"></i>{{username}}</span><span><i class="fa-solid fa-timeline"></i>05 August 2024</span>
+        </div>
+        <hr>
         <a href="#" class="btn btn-outline-dark"> Read  More... <i>>></i></a>
       </div>
     </div>
@@ -12,7 +16,7 @@
 
 <script>
   export default {
-    props: ['title', 'image'],
+    props: ['title', 'image', 'username'],
     mounted() {
       console.log(this.image);
     }
