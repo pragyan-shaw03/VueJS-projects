@@ -15,6 +15,42 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="#">About</a>
                         </li>
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                        <ul class="navbar-nav">
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Filter
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                              <li>
+                                <div class="form-check ms-4">
+                                  <input class="form-check-input" type="checkbox" @change="categoryClicked('Art')" id="flexCheckChecked">
+                                  <label class="form-check-label text-light" for="flexCheckChecked">
+                                    Art
+                                  </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="form-check ms-4">
+                                  <input class="form-check-input" type="checkbox" @change="categoryClicked('Finance')" id="flexCheckChecked">
+                                  <label class="form-check-label text-light" for="flexCheckChecked">
+                                    Finance
+                                  </label>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="form-check ms-4">
+                                  <input class="form-check-input" type="checkbox" @change="categoryClicked('Tech')" id="flexCheckDefault">
+                                  <label class="form-check-label text-light" for="flexCheckDefault">
+                                    Technology
+                                  </label>
+                                </div>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+
                     </ul>
                     <form class="d-flex">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
@@ -33,8 +69,7 @@
                 BLOGS
             </div>
             <p>Learn about designs through our <br> blogs insights, thoughts, industry trends and <br> market tips.</p>
-        </div>
-        
+        </div>  
         <div class="cards-wrapper">
             <div class="cards">
                 <BlogCard v-for="item in filteredItems" :key="item.title" :title="item.title" :image="item.image" :username="item.username">
@@ -84,6 +119,7 @@
                 rights reserved | Powered by DIY Baazar
             </p>
         </footer>
+
 </template>
 
 <script>
@@ -96,13 +132,14 @@ export default {
   data() {
     return {
       items: [
-        { title: 'name1', disp: true, image: require('@/assets/img1.jpg'), username: 'pragyan@03'},
-        { title: 'name11', disp: true, image: require('@/assets/img2.jpg'), username: 'amanjaiz'},
-        { title: 'name111', disp: true, image: require('@/assets/img1.jpg') , username: 'akshat02'},
-        { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') , username: 'aasthadas1'},
-        { title: 'name11111', disp: true, image: require('@/assets/img2.jpg') , username: 'nishu@3'}
+        { title: 'name1', disp: true, image: require('@/assets/img1.jpg'), username: 'pragyan@03', category: 'Tech'},
+        { title: 'name11', disp: true, image: require('@/assets/img2.jpg'), username: 'amanjaiz', category: 'Finance'},
+        { title: 'name111', disp: true, image: require('@/assets/img1.jpg') , username: 'akshat02', category: 'Art'},
+        { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') , username: 'aasthadas1', category: 'Tech'},
+        { title: 'name11111', disp: true, image: require('@/assets/img2.jpg') , username: 'nishu@3', category: 'Art'}
       ],
-      searchOption: ''
+      searchOption: '',
+      categories: []
     };
   },
   computed: {
@@ -111,9 +148,22 @@ export default {
     }
   },
   methods: {
+    categoryClicked(categ) {
+      let index = this.categories.indexOf(categ);
+      
+      if (index === -1) {
+        this.categories.push(categ);
+      } else {
+        this.categories.splice(index, 1);
+      }
+      
+      this.items.forEach((item) => {
+        item.disp = this.categories.length === 0 || this.categories.includes(item.category);
+      })
+    },
     searched() {
       this.items.forEach(item => {
-        item.disp = item.title.toLowerCase().startsWith(this.searchOption.toLowerCase());
+        item.disp = (this.categories.length === 0 || this.categories.includes(item.category)) && item.title.toLowerCase().startsWith(this.searchOption.toLowerCase());
       });
     },
     reloadPage() {
@@ -138,7 +188,7 @@ body {
   font-size: 40px;
 }
 #nav-links {
-  margin-left: 60%;
+  margin-left: 40%;
 }
 #nav-links > .nav-item {
   margin-right: 50px;
