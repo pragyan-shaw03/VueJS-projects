@@ -6,7 +6,7 @@
       <p class="card-text">Some quick example text to build on the card title and 
         card's content.</p>
         <div class="d-flex justify-content-between">
-          <span><i class="fa-solid fa-user"></i>{{username}}</span><span><i class="fa-solid fa-timeline"></i>05 August 2024</span>
+          <span>{{username}}</span><span>05 August 2024</span>
         </div>
         <hr>
         <a href="#" class="btn btn-outline-dark"> Read  More... <i>>></i></a>
@@ -17,9 +17,6 @@
 <script>
   export default {
     props: ['title', 'image', 'username'],
-    mounted() {
-      console.log(this.image);
-    }
   };
 </script>
 

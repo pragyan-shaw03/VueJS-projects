@@ -64,15 +64,16 @@
 
         <div class="empty"></div>
 
-        <div class="heading">
+        <!-- <div class="heading">
             <div class="main-heading">
                 BLOGS
             </div>
             <p>Learn about designs through our <br> blogs insights, thoughts, industry trends and <br> market tips.</p>
-        </div>  
+        </div>   -->
+        <PageHeading></PageHeading>
         <div class="cards-wrapper">
             <div class="cards">
-                <BlogCard v-for="item in filteredItems" :key="item.title" :title="item.title" :image="item.image" :username="item.username">
+                <BlogCard v-for="item in filteredItems" :key="item.title" v-show="item.disp" :title="item.title" :image="item.image" :username="item.username">
                 </BlogCard>
             </div>
         </div>
@@ -124,20 +125,24 @@
 
 <script>
 import BlogCard from './components/BlogCard.vue';
+import PageHeading from './components/PageHeading.vue';
+import axios from 'axios';
 
 export default {
   components: {
-    BlogCard
+    BlogCard,
+    PageHeading
   },
   data() {
     return {
-      items: [
-        { title: 'name1', disp: true, image: require('@/assets/img1.jpg'), username: 'pragyan@03', category: 'Tech'},
-        { title: 'name11', disp: true, image: require('@/assets/img2.jpg'), username: 'amanjaiz', category: 'Finance'},
-        { title: 'name111', disp: true, image: require('@/assets/img1.jpg') , username: 'akshat02', category: 'Art'},
-        { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') , username: 'aasthadas1', category: 'Tech'},
-        { title: 'name11111', disp: true, image: require('@/assets/img2.jpg') , username: 'nishu@3', category: 'Art'}
-      ],
+      // items: [
+      //   { title: 'name1', disp: true, image: require('@/assets/img1.jpg'), username: 'pragyan@03', category: 'Tech'},
+      //   { title: 'name11', disp: true, image: require('@/assets/img2.jpg'), username: 'amanjaiz', category: 'Finance'},
+      //   { title: 'name111', disp: true, image: require('@/assets/img1.jpg') , username: 'akshat02', category: 'Art'},
+      //   { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') , username: 'aasthadas1', category: 'Tech'},
+      //   { title: 'name11111', disp: true, image: require('@/assets/img2.jpg') , username: 'nishu@3', category: 'Art'}
+      // ],
+      items:[],
       searchOption: '',
       categories: []
     };
@@ -147,6 +152,14 @@ export default {
       return this.items.filter(item => item.disp);
     }
   },
+  async mounted() {
+    let that = this;
+
+    await axios.get('https://vuejs-projects-b7931-default-rtdb.firebaseio.com/posts.json').then(res => {
+      that.items = Object.values(res.data);
+    });
+
+  },  
   methods: {
     categoryClicked(categ) {
       let index = this.categories.indexOf(categ);
@@ -192,19 +205,6 @@ body {
 }
 #nav-links > .nav-item {
   margin-right: 50px;
-}
-.heading {
-  margin: 0 80px;
-  color: white;
-}
-.main-heading {
-  font-weight: 900;
-  font-size: 80px;
-  color:white;
-}
-.heading > p {
-  color: white;
-  font-weight: 100;
 }
 .cards {
   display: grid;
