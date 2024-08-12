@@ -1,18 +1,17 @@
 <template>
-        <NavComponent :items="this.items" @update-items="updateItems"></NavComponent>
-        <div class="empty"></div>
+  <NavComponent :items="this.items" @update-items="updateItems"></NavComponent>
+  <div class="empty"></div>
 
-        <PageHeading></PageHeading>
+  <PageHeading></PageHeading>
 
-        <div class="cards-wrapper">
-            <div class="cards">
-                <BlogCard v-for="item in filteredItems" :key="item.title" v-show="item.disp" :title="item.title" :image="item.image" :username="item.username">
-                </BlogCard>
-            </div>
-        </div>
+  <div class="cards-wrapper">
+      <div class="cards">
+          <BlogCard v-for="item in filteredItems" :key="item.title" :title="item.title" :image="item.image" :username="item.username">
+          </BlogCard>
+      </div>
+  </div>
 
-        <FooterComponent></FooterComponent>
-
+  <FooterComponent></FooterComponent>
 </template>
 
 <script>
@@ -85,9 +84,5 @@ body {
 }
 .empty {
   height: 100px;
-}
-a {
-  text-decoration: none;
-  color: white;
 }
 </style>
