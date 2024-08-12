@@ -22,4 +22,9 @@
   color: white;
   font-weight: 100;
 }
+@media (max-width: 600px) {
+  .heading {
+    margin: 0 30px;
+  }
+}
 </style>
