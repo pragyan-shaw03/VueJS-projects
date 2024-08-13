@@ -1,5 +1,5 @@
 <template>
-  <NavComponent :items="this.items" @update-items="updateItems"></NavComponent>
+  <NavComponent :items="this.items" @update-items="updateItems" @update-display="updateDisplayForm"></NavComponent>
   <div class="empty"></div>
 
   <PageHeading></PageHeading>
@@ -12,10 +12,12 @@
   </div>
 
   <FooterComponent></FooterComponent>
+  <CreatePost v-show="this.displayCreatePost" :items="this.items" @update-display="updateDisplayForm" @update-items="updateItems" :displayCreatePost="this.displayCreatePost"></CreatePost>
 </template>
 
 <script>
 import BlogCard from './components/BlogCard.vue';
+import CreatePost from './components/CreatePost.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import NavComponent from './components/NavComponent.vue';
 import PageHeading from './components/PageHeading.vue';
@@ -26,18 +28,13 @@ export default {
     BlogCard,
     PageHeading,
     NavComponent,
-    FooterComponent
+    FooterComponent,
+    CreatePost
   },
   data() {
     return {
-      // items: [
-      //   { title: 'name1', disp: true, image: require('@/assets/img1.jpg'), username: 'pragyan@03', category: 'Tech'},
-      //   { title: 'name11', disp: true, image: require('@/assets/img2.jpg'), username: 'amanjaiz', category: 'Finance'},
-      //   { title: 'name111', disp: true, image: require('@/assets/img1.jpg') , username: 'akshat02', category: 'Art'},
-      //   { title: 'name1111', disp: true, image: require('@/assets/img1.jpg') , username: 'aasthadas1', category: 'Tech'},
-      //   { title: 'name11111', disp: true, image: require('@/assets/img2.jpg') , username: 'nishu@3', category: 'Art'}
-      // ],
       items:[],
+      displayCreatePost: false
     };
   },
   computed: {
@@ -59,6 +56,9 @@ export default {
     },
     updateItems(updateValue) {
       this.items = updateValue;
+    },
+    updateDisplayForm(updateValue) {
+      this.displayCreatePost = updateValue;
     }
   }
 };

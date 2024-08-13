@@ -21,6 +21,9 @@
 </script>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
 .card {
     margin: 10px;
     justify-self: center;

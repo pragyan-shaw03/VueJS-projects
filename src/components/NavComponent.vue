@@ -16,6 +16,11 @@
                             <a class="nav-link active" href="#">About</a>
                         </li>
                         <li class="nav-item">
+                          <a class="nav-link active p-0" href="#">
+                            <button class="btn btn-outline-light" @click="dispForm">Create&nbsp;Post</button>
+                          </a>
+                        </li>
+                        <li class="nav-item">
                           <ul class="navbar-nav">
                             <li class="nav-item dropdown">
                               <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -64,14 +69,17 @@
 </template>
 <script>
     export default {
-        props: ['items'],
+        props: ['items', 'displayCreatePost'],
         data() {
             return {
                 searchOption: '',
-                categories: []
+                categories: [],
             }
         },
         methods: {
+            dispForm() {
+              this.$emit('update-display', true);
+            },
             categoryClicked(categ) {
                 let index = this.categories.indexOf(categ);
                 
