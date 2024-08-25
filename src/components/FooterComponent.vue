@@ -29,7 +29,7 @@
             </div>
 
             <hr style="color: white; font-weight: 100;">
-            <div class="social-media" style="display: flex; flex-wrap: wrap; justify-content: center;">
+            <div class="social-media" style="display: flex; gap: 2rem; flex-wrap: wrap; justify-content: center;">
                 <a href="#"><i class="fa-brands fa-instagram"></i><span>Instagram</span></a>
                 <a href="#"><i class="fa-brands fa-youtube"></i><span>Youtube</span></a>
                 <a href="#"><i class="fa-brands fa-pinterest"></i><span>Pinterest</span></a>
@@ -72,10 +72,7 @@ footer {
 }
 .social-media {
   text-align: center;
-  margin: 50px;
-}
-.social-media > a > i {
-  padding: 0 0 0 40px;
+  margin: 30px;
 }
 .social-media > a > i, .social-media > a > span{
   color: white;
@@ -95,6 +92,9 @@ a {
   .logo {
     height: 80px;
     width: 250px;
+  }
+  span {
+    display: none;
   }
 }
 </style>

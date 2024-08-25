@@ -1,7 +1,7 @@
 <template>
     <div class="background">
         <form class="container d-flex flex-column align-items-start" id="formField">
-            <button class="btn btn-outline" id="cross" @click="toggleDisplay">X</button>
+            <button class="btn btn-outline" id="cross" @click.prevent="toggleDisplay">X</button>
             <h1 class="align-self-center fw-bold mt-4">Create Post</h1>
             <label for="description">Username:</label>
             <input id="description" name="title" type="text" placeholder="Enter Username" v-model="username">
