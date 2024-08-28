@@ -23,6 +23,7 @@ img {
   text-align: center;
   opacity: 0.6;
   font-size: 0.9em;
+  margin-top: 0.6em;
 }
 .left {
     float: left;

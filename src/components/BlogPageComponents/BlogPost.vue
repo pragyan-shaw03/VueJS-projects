@@ -1,7 +1,7 @@
 <template>
   <div class="blog-post">
     <h1 class="title">{{ title }}</h1>
-    <p class="subtitle"><span class="author"> By {{ author }} </span><span class="author"><i class="fa-regular fa-clock"></i> {{ formattedDate }}</span></p>
+    <p class="subtitle"><span class="author"> By {{ author }} </span><span class="author"><i class="fa-solid fa-calendar-days"></i> {{ formattedDate }}</span></p>
     <img
       :src="image"
       alt="Blog Post Image"
@@ -107,6 +107,7 @@ p {
 }
 i {
   font-size: 0.9em;
+  opacity: 0.7;
 }
 .blog-post {
   max-width: 1000px;
