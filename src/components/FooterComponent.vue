@@ -49,10 +49,11 @@ footer {
 }
 .logo {
   background-color: white;
+  background-image: url(../assets/logo_text.png);
   height: 100px;
   width: 420px;
-  background-image: url(../assets/logo_text.png);
   background-size: cover;
+  object-fit: cover;
   margin: auto;
 }
 .footer-items {
@@ -90,8 +91,9 @@ a {
 }
 @media (max-width: 600px) {
   .logo {
-    height: 80px;
+    height: 60px;
     width: 250px;
+    object-fit: cover;
   }
   span {
     display: none;

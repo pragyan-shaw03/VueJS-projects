@@ -22,7 +22,6 @@
       </div>
     </div>
 
-    <FooterComponent></FooterComponent>
     <CreatePost
       v-show="this.displayCreatePost"
       :items="this.items"
@@ -36,7 +35,6 @@
   <script>
 import BlogCard from "./BlogCard.vue";
 import CreatePost from "./CreatePost.vue";
-import FooterComponent from "./FooterComponent.vue";
 import NavComponent from "./NavComponent.vue";
 import PageHeading from "./PageHeading.vue";
 import axios from "axios";
@@ -46,7 +44,6 @@ export default {
     BlogCard,
     PageHeading,
     NavComponent,
-    FooterComponent,
     CreatePost,
   },
   data() {

@@ -11,7 +11,7 @@
         ><span>05 August 2024</span>
       </div>
       <hr />
-      <router-link to="post" class="btn btn-outline-dark">
+      <router-link :to="`post/${title}`" class="btn btn-outline-dark">
         Read More... <i>>></i></router-link
       >
     </div>

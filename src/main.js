@@ -11,7 +11,7 @@ const routes = [
         component: HomePage
     },
     {
-        path: '/post',
+        path: '/post/:title',   
         name: 'post',
         component: BlogPage
     }
