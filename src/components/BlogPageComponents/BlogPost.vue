@@ -1,13 +1,13 @@
 <template>
   <div class="blog-post">
     <h1 class="title">{{ title }}</h1>
-    <p><span class="author"> By {{ author }} </span> <ul class="date"><li>{{ formattedDate }}</li></ul></p>
+    <p class="subtitle"><span class="author"> By {{ author }} </span><span class="author"><i class="fa-regular fa-clock"></i> {{ formattedDate }}</span></p>
     <img
-      v-if="imageUrl"
       :src="image"
       alt="Blog Post Image"
       class="post-image"
     />
+    <p class="label"> fig:1.0 Heading : {{title}}</p>
     <div class="content">
         <h2><b>Introduction</b></h2>
         <p>We have all known Amazon, Flipkart, Myntra, and other E-trade stages throughout recent decades. Yet, have you at any point known about a stage that underpins nearby craftsmans and sells <b>ONLY Handmade Products</b>? Be it Handmade Home Decorative things, handmade jewellery, handmade unique gifts, handcrafted personalized items, or handmade paintings. <b>DIY Baazar</b>, an Indian E-commerce stage, is the perfect place where you will discover everything carefully assembled by the local craftsman of India.</p>
@@ -16,18 +16,19 @@
         <h2><b>Why Do We Support the Selling of Handmade Products?</b></h2>
         <BlogImage src="https://diybaazar.com/public/images/blog/blog-02-01.jpg" label="1.1 Marketplace" float="left"></BlogImage>
 
-        <p>India is a huge country with a huge part of individuals living underneath the poverty line. Bringing in cash to meet every day requirements is as yet thought to be an extravagance in numerous families in rural India. In this manner, individuals in numerous districts began making things that are esteemed by local people just as travellers. This has brought forth a culture of making handicrafts work which holds an incentive in the Indian just as foreign market.</p>
+        <p>India is a huge country with a huge part of individuals living underneath the poverty line. Bringing in cash to meet every day requirements is as yet thought to be an extravagance in numerous families in rural India. In this manner, individuals in numerous districts began making things that are esteemed by local people just as travellers. This has brought forth a culture of making handicrafts work which holds an incentive in the Indian just as foreign market. Culture of making handicrafts holds an incentive in the Indian just as foreign market.</p>
         <p>For instance, People from lesser developed territories of West Bengal began using their local materials to make handicrafts. Jute, Bamboo, Wood, everything was transformed into something special.</p>
         <p>It is vital to help our local craftsmen and specialists to guarantee they can carry on with a sound and prosperous life. With this point of supporting local craftsmen, DIY Baazar was established with the sole rationale of conveying the best quality carefully assembled items which range from Handmade Jewelry, Handmade Home Decor (Home Decorative Items), Handmade Personalized Gifts, Handmade Fashion Items, Handmade unique works of art, thus significantly more.</p>
 
         <h2><b>Who Can Sell their Handmade Products?</b></h2>
+        <BlogImage src="https://diybaazar.com/publicuploads/seller/products/wall-hanging-of-mixed-media-art-on-fiber-frame-105-inches-x-135-inches-133-160-1_diybaazar5e9db82aac695.jpeg" label="1.2 Test Image Label" float="center"></BlogImage>
         <p>Anybody can sell their Handmade Products on DIY Baazar — from an individual who just loves making Home Decorative Items as an enthusiasm, to somebody who does this to bring in some extra money; everybody can register on this stage and sell their items. DIY Baazar doesn't charge an additional penny for the enrolment of the dealers. All things considered, the advertising and advancement of the items are additionally done by the in house group.</p>
         <p>There aren’t an excessive number of foundations of this sort and India, being a non-industrial nation needs more such commercial centres to help the local craftsmen.</p>
 
         <h2><b>Handcrafted Products on DIY Baazar</b></h2>
-        <p>DIY Baazar has a wide scope of high quality items that you can purchase. Handcrafted Jewelry Online, Personalized Gifts, Handmade Fashion things, Home Decorative Items, Handmade Original Paintings, you will discover everything under one rooftop. DIY Baazar has a wide scope of high quality items that you can purchase. Handcrafted Jewelry Online, Personalized Gifts, Handmade Fashion things, Home Decorative Items, Handmade Original Paintings, you will discover everything under one rooftop.</p>
-        <BlogImage src="https://images.pexels.com/photos/4483109/pexels-photo-4483109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" label="1.2 Handcraft" float="right"></BlogImage>
-        <p>DIY Baazar has a wide scope of high quality items that you can purchase. Handcrafted Jewelry Online, Personalized Gifts, Handmade Fashion things, Home Decorative Items, Handmade Original Paintings, you will discover everything under one rooftop. DIY Baazar has a wide scope of high quality items that you can purchase. Handcrafted Jewelry Online, Personalized Gifts, Handmade Fashion things, Home Decorative Items, Handmade Original Paintings, you will discover everything under one rooftop.</p>
+        <p>DIY Baazar has a wide scope of high quality items that you can purchase. Handcrafted Jewelry Online, Personalized Gifts, Handmade Fashion things, Home Decorative Items, Handmade Original Paintings, you will discover everything under one rooftop. DIY Baazar has a wide scope of high quality items that you can purchase. Handcrafted Jewelry Online, Personalized Gifts, Handmade Fashion things, Home Decorative Items, Handmade Original Paintings, you will discover everything under one rooftop. You will discover everything under one rooftop.</p>
+        <BlogImage src="https://images.pexels.com/photos/4483109/pexels-photo-4483109.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" label="1.3 Handcraft" float="right"></BlogImage>
+        <p>DIY Baazar has a wide scope of high quality items that you can purchase. Handcrafted Jewelry Online, Personalized Gifts, Handmade Fashion things, Home Decorative Items, Handmade Original Paintings, you will discover everything under one rooftop. DIY Baazar has a wide scope of high quality items that you can purchase. Handcrafted Jewelry Online, Personalized Gifts, Handmade Fashion things, Home Decorative Items, Handmade Original Paintings, you will discover everything under one rooftop. you will discover everything under one rooftop.</p>
         
         <h2><b>A Short Outline of the Handmade Products:</b></h2>
         <p><b>Carefully made Handmade Paintings:</b> For all craftsmen across the world who are hoping to purchase canvas paintings online, you will undoubtedly fall head over heels in love with the delightful works of art and unique artistic creations from the best craftsmen across India.</p>
@@ -71,8 +72,6 @@ export default {
     return {
       author: "Author Name",
       date: "2024-08-25",
-      imageUrl:
-        "https://cdn.pixabay.com/photo/2023/09/04/17/48/flamingos-8233303_1280.jpg", // Replace with your image URL
       content: '',
       tags: ["Vue.js", "JavaScript", "Web Development"],
       url: window.location.href,
@@ -103,8 +102,11 @@ export default {
 </script>
 
 <style scoped>
-.date {
-  display: inline-block;
+p {
+  text-align: justify;
+}
+i {
+  font-size: 0.9em;
 }
 .blog-post {
   max-width: 1000px;
@@ -117,18 +119,25 @@ export default {
   font-size: 2em;
   font-weight: 600;
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
-.author, .date{
+.author{
   font-size: 0.9em;
   color: #555;
   margin-bottom: 1em;
+  margin-right: 2em;
 }
 
 .post-image {
   width: 100%;
   height: auto;
   margin-bottom: 1em;
+}
+.label {
+  text-align: center;
+  opacity: 0.7;
+  font-size: 1rem;
 }
 .content {
   font-size: 1.2em;

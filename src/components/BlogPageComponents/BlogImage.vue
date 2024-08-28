@@ -1,6 +1,6 @@
 <template>
-  <div class="contain" :class="{'left': float == 'left', 'right': float == 'right'}">
-    <img :src="src" alt=""  />
+  <div class="contain" :class="{'left': float == 'left', 'right': float == 'right', 'center' : float == 'center'}">
+    <img :src="src" alt="" />
     <div class="label" v-if="label">fig:{{ label }}</div>
   </div>
 </template>
@@ -13,16 +13,15 @@ export default {
   
 <style scoped>
 .contain {
-    margin: 15px 15px 0px 15px;
+    margin: 1rem;
     width: fit-content;
-    float: left;
-  }
+}
 img {
   width: 25rem;
 }
 .label {
   text-align: center;
-  opacity: 0.5;
+  opacity: 0.6;
   font-size: 0.9em;
 }
 .left {
@@ -30,6 +29,13 @@ img {
 }
 .right {
     float: right;
+}
+.center {
+    width: 80%;
+    margin: 2rem auto;
+}
+.center > img {
+    width: 100%;
 }
 @media (max-width: 500px) {
   .contain {
