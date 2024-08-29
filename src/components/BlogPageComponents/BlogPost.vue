@@ -133,6 +133,7 @@ i {
 .post-image {
   width: 100%;
   height: auto;
+  padding: 0 1em;
   margin-bottom: 1em;
 }
 .label {

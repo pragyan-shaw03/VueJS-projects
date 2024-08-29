@@ -8,7 +8,7 @@
       </p>
       <div class="d-flex justify-content-between">
         <span>{{ username }}</span
-        ><span>05 August 2024</span>
+          ><span>05 August 2024</span>
       </div>
       <hr />
       <router-link :to="`post/${title}`" class="btn btn-outline-dark">
